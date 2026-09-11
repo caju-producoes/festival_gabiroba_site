@@ -26,7 +26,12 @@ export default function SpeciesPage() {
 
   return (
     <>
-      {showToast && <DiscoveryToast speciesName={item.commonName} total={discoveries.length + 1} onClose={() => setShowToast(false)} />}
+      {showToast &&
+        <DiscoveryToast
+          speciesName={item.commonName}
+          total={discoveries.length}
+          onClose={() => setShowToast(false)}
+        />}
       <article className="species-page">
         <SpeciesProgress />
         <header className="species-hero poster-section">
