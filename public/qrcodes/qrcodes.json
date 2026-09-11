@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "planta": "Cambuci",
+    "slug": "cambuci",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/cambuci?origem=qrcode",
+    "arquivo": "/qrcodes/01-cambuci.png"
+  },
+  {
+    "id": 2,
+    "planta": "Cipó-de-São-João",
+    "slug": "cipo-de-sao-joao",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/cipo-de-sao-joao?origem=qrcode",
+    "arquivo": "/qrcodes/02-cipo-de-sao-joao.png"
+  },
+  {
+    "id": 3,
+    "planta": "Uvaia",
+    "slug": "uvaia",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/uvaia?origem=qrcode",
+    "arquivo": "/qrcodes/03-uvaia.png"
+  },
+  {
+    "id": 4,
+    "planta": "Eugênia itapemirimensis",
+    "slug": "eugenia-itapemirimensis",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/eugenia-itapemirimensis?origem=qrcode",
+    "arquivo": "/qrcodes/04-eugenia-itapemirimensis.png"
+  },
+  {
+    "id": 5,
+    "planta": "Taperebá",
+    "slug": "tapereba",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/tapereba?origem=qrcode",
+    "arquivo": "/qrcodes/05-tapereba.png"
+  },
+  {
+    "id": 6,
+    "planta": "Araçá-roxo",
+    "slug": "araca-roxo",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/araca-roxo?origem=qrcode",
+    "arquivo": "/qrcodes/06-araca-roxo.png"
+  },
+  {
+    "id": 7,
+    "planta": "Mamão-jaracatiá",
+    "slug": "mamao-jaracatia",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/mamao-jaracatia?origem=qrcode",
+    "arquivo": "/qrcodes/07-mamao-jaracatia.png"
+  },
+  {
+    "id": 8,
+    "planta": "Figueira-branca",
+    "slug": "figueira-branca",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/figueira-branca?origem=qrcode",
+    "arquivo": "/qrcodes/08-figueira-branca.png"
+  },
+  {
+    "id": 9,
+    "planta": "Paineira-rosa",
+    "slug": "paineira-rosa",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/paineira-rosa?origem=qrcode",
+    "arquivo": "/qrcodes/09-paineira-rosa.png"
+  },
+  {
+    "id": 10,
+    "planta": "Araucária",
+    "slug": "araucaria",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/araucaria?origem=qrcode",
+    "arquivo": "/qrcodes/10-araucaria.png"
+  },
+  {
+    "id": 11,
+    "planta": "Canela-amarela",
+    "slug": "canela-amarela",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/canela-amarela?origem=qrcode",
+    "arquivo": "/qrcodes/11-canela-amarela.png"
+  },
+  {
+    "id": 12,
+    "planta": "Bandarra",
+    "slug": "bandarra",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/bandarra?origem=qrcode",
+    "arquivo": "/qrcodes/12-bandarra.png"
+  },
+  {
+    "id": 13,
+    "planta": "Amescla-de-cheiro",
+    "slug": "amescla-de-cheiro",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/amescla-de-cheiro?origem=qrcode",
+    "arquivo": "/qrcodes/13-amescla-de-cheiro.png"
+  },
+  {
+    "id": 14,
+    "planta": "Pitanga",
+    "slug": "pitanga",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/pitanga?origem=qrcode",
+    "arquivo": "/qrcodes/14-pitanga.png"
+  },
+  {
+    "id": 15,
+    "planta": "Juçara",
+    "slug": "jucara",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/jucara?origem=qrcode",
+    "arquivo": "/qrcodes/15-jucara.png"
+  },
+  {
+    "id": 16,
+    "planta": "Cabeludinha",
+    "slug": "cabeludinha",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/cabeludinha?origem=qrcode",
+    "arquivo": "/qrcodes/16-cabeludinha.png"
+  },
+  {
+    "id": 17,
+    "planta": "Jatobá",
+    "slug": "jatoba",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/jatoba?origem=qrcode",
+    "arquivo": "/qrcodes/17-jatoba.png"
+  },
+  {
+    "id": 18,
+    "planta": "Biribá",
+    "slug": "biriba",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/biriba?origem=qrcode",
+    "arquivo": "/qrcodes/18-biriba.png"
+  },
+  {
+    "id": 19,
+    "planta": "Tucaneira",
+    "slug": "tucaneira",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/tucaneira?origem=qrcode",
+    "arquivo": "/qrcodes/19-tucaneira.png"
+  },
+  {
+    "id": 20,
+    "planta": "Guabiroba-gigante",
+    "slug": "guabiroba-gigante",
+    "url": "https://caju-producoes.github.io/festival_gabiroba_site/#/especies/guabiroba-gigante?origem=qrcode",
+    "arquivo": "/qrcodes/20-guabiroba-gigante.png"
+  }
+]

@@ -43,7 +43,7 @@ def main():
     manifest = []
 
     for item in species:
-        url = f"{base_url}/especies/{item['slug']}?origem=qrcode"
+        url = f"{base_url}/#/especies/{item['slug']}?origem=qrcode"
         filename = f"{item['id']:02d}-{item['slug']}.png"
         output_file = OUTPUT_DIR / filename
 
