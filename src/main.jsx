@@ -6,7 +6,7 @@ import './styles/global.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/festival-gabiroba_site">
+    <BrowserRouter basename="/festival_gabiroba_site">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
