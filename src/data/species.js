@@ -70,7 +70,7 @@ export const species = [
     slug: 'paineira-rosa',
     commonName: 'Paineira-rosa',
     scientificName: 'Ceiba speciosa',
-    image: `${base}images/especies/paineira-rosa.jpg`,
+    image: `${base}images/especies/paineira-rosa.webp`,
     imageAlt: 'Frutos e flor rosa da paineira-rosa',
   },
   {
@@ -163,10 +163,11 @@ export const species = [
   },
 ]
 
-
 export function getDisplayScientificName(scientificName = '') {
-  if (/validar/i.test(scientificName)) return ''
-  return scientificName.trim()
+  return scientificName
+    .replace(/\?\s*(?=($|—|-))/g, '')
+    .replace(/\s*[—-]\s*validar.*$/i, '')
+    .trim()
 }
 
 const c = (intro, know, history, flavorsTitle, flavors, nature, cultivation, curiosity, chips = [], validationNote = '') => ({ intro, know, history, flavorsTitle, flavors, nature, cultivation, curiosity, chips, validationNote })
