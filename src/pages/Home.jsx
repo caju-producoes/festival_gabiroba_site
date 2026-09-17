@@ -45,7 +45,6 @@ export default function Home() {
               alt="Festival Gabiroba"
             />
             <span className="festival-kicker hero-step hero-step-2">SABORES DA MATA ATLÂNTICA</span>
-            <h1 className="hero-step hero-step-2">Gastronomia, floresta e os sabores da Mata Atlântica.</h1>
             <p className="hero-step hero-step-3">
               Uma experiência para descobrir espécies, ingredientes, histórias e outras formas de se relacionar com a floresta.
             </p>
@@ -58,7 +57,7 @@ export default function Home() {
 
         <div className="brand-hero__footer">
           <div className="container brand-hero__footer-inner">
-            <span>GASTRONOMIA</span><span>•</span><span>PATRIMÔNIO</span><span>•</span><span>TERRITÓRIO</span><span>•</span><span>EMPREENDEDORISMO</span>
+            <span>GASTRONOMIA</span><span>•</span><span>SABORES</span><span>•</span><span>TERRITÓRIO</span><span>•</span><span>ENCONTROS</span>
           </div>
         </div>
       </section>
