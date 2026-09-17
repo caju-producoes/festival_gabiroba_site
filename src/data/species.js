@@ -6,7 +6,7 @@ export const species = [
     slug: 'cambuci',
     commonName: 'Cambuci',
     scientificName: 'Campomanesia phaea',
-    image: `${base}images/especies/cambuci.webp`,
+    image: `${base}images/especies/cambuci.jpg`,
     imageAlt: 'Frutos verdes de cambuci com formato achatado e anguloso',
   },
   {
@@ -54,7 +54,7 @@ export const species = [
     slug: 'mamao-jaracatia',
     commonName: 'Mamão-jaracatiá',
     scientificName: 'Jacaratia spinosa',
-    image: `${base}images/especies/mamao-jaracatia.jpg`,
+    image: `${base}images/especies/Jaracatia.jpg`,
     imageAlt: 'Frutos de mamão-jaracatiá pendendo do ramo junto a uma flor rosada',
   },
   {
@@ -78,7 +78,7 @@ export const species = [
     slug: 'araucaria',
     commonName: 'Araucária',
     scientificName: 'Araucaria angustifolia',
-    image: `${base}images/especies/araucaria.jpg`,
+    image: `${base}images/especies/araucaria.avif`,
     imageAlt: 'Araucária vista de baixo com copa característica',
   },
   {
@@ -126,7 +126,7 @@ export const species = [
     slug: 'cabeludinha',
     commonName: 'Cabeludinha',
     scientificName: 'Myrciaria glazioviana? — validar muda',
-    image: `${base}images/especies/cabeludinha.jpg`,
+    image: `${base}images/especies/cabeludinha.avif`,
     imageAlt: 'Frutos amarelos e aveludados da cabeludinha',
   },
   {
@@ -142,7 +142,7 @@ export const species = [
     slug: 'biriba',
     commonName: 'Biribá',
     scientificName: 'Annona sp. — validar muda',
-    image: `${base}images/especies/biriba.jpg`,
+    image: `${base}images/especies/Biribá.webp`,
     imageAlt: 'Fruto espinhoso associado ao nome biribá',
   },
   {

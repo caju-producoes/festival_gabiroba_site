@@ -9,16 +9,19 @@ export default function TrailPage() {
   const discoveredSpecies = species.filter((item) => discoveries.includes(item.slug))
   const progress = (discoveries.length / species.length) * 100
   const nextMilestone = milestones.find((value) => discoveries.length < value)
+  const isComplete = discoveries.length === species.length
 
   return (
     <section className="trail-collection-page">
       <header className="trail-collection-hero">
         <div className="container trail-collection-hero__inner" data-reveal>
           <div className="trail-collection-hero__copy">
-            <span className="eyebrow">MINHA JORNADA PELA MATA ATLÂNTICA</span>
-            <h1>Sua trilha está ganhando vida.</h1>
+            <span className="eyebrow">{isComplete ? 'JORNADA COMPLETA PELA MATA ATLÂNTICA' : 'MINHA JORNADA PELA MATA ATLÂNTICA'}</span>
+            <h1>{isComplete ? 'Sua trilha está completa.' : 'Sua trilha está ganhando vida.'}</h1>
             <p>
-              Cada QR Code encontrado revela uma nova espécie e guarda uma lembrança da sua passagem pelo Festival Gabiroba.
+              {isComplete
+                ? 'Você encontrou as 20 espécies do Festival Gabiroba. Agora esta trilha guarda a memória de todos os encontros que fizeram parte da sua jornada.'
+                : 'Cada QR Code encontrado revela uma nova espécie e guarda uma lembrança da sua passagem pelo Festival Gabiroba.'}
             </p>
           </div>
 
@@ -40,8 +43,8 @@ export default function TrailPage() {
             <div>
               <span className="eyebrow">PROGRESSO DA TRILHA</span>
               <h2>
-                {discoveries.length === species.length
-                  ? 'Trilha completa ✦'
+                {isComplete
+                  ? 'Você encontrou todas as 20 espécies. ✦'
                   : discoveries.length === 0
                     ? 'Sua primeira descoberta está esperando por você.'
                     : `${discoveries.length} ${discoveries.length === 1 ? 'história encontrada' : 'histórias encontradas'}.`}
@@ -77,10 +80,12 @@ export default function TrailPage() {
           <header className="compact-heading" data-reveal>
             <div>
               <span className="eyebrow">COLEÇÃO DE DESCOBERTAS</span>
-              <h2>{discoveries.length ? 'Espécies que já cruzaram seu caminho.' : 'Sua coleção começa aqui.'}</h2>
+              <h2>{isComplete ? 'Sua coleção está completa.' : discoveries.length ? 'Espécies que já cruzaram seu caminho.' : 'Sua coleção começa aqui.'}</h2>
             </div>
             <p>
-              As espécies encontradas ganham um selo na sua coleção. Continue procurando as mudas espalhadas pelo Festival.
+              {isComplete
+                ? 'As 20 espécies agora fazem parte da sua coleção. Você pode revisitar cada uma delas e lembrar os encontros da sua passagem pelo Festival.'
+                : 'As espécies encontradas ganham um selo na sua coleção. Continue procurando as mudas espalhadas pelo Festival.'}
             </p>
           </header>
 
@@ -116,13 +121,31 @@ export default function TrailPage() {
           )}
         </section>
 
-        <section className="trail-map-section" data-reveal>
+        <section className={`trail-map-section ${isComplete ? 'is-complete' : ''}`} data-reveal>
+          {isComplete && (
+            <img
+              className="trail-map-section__art"
+              src="/festival_gabiroba_site/brand/sloth-botanical.png"
+              alt=""
+              aria-hidden="true"
+            />
+          )}
           <div>
-            <span className="eyebrow">AINDA HÁ MATA PARA DESCOBRIR</span>
-            <h2>{species.length - discoveries.length} {species.length - discoveries.length === 1 ? 'espécie ainda espera' : 'espécies ainda esperam'} por você.</h2>
-            <p>Use a coleção de espécies como guia e procure os QR Codes pelo Festival.</p>
+            <span className="eyebrow">{isComplete ? 'TRILHA COMPLETA' : 'AINDA HÁ MATA PARA DESCOBRIR'}</span>
+            <h2>
+              {isComplete
+                ? '20 espécies. Uma trilha inteira de encontros.'
+                : `${species.length - discoveries.length} ${species.length - discoveries.length === 1 ? 'espécie ainda espera' : 'espécies ainda esperam'} por você.`}
+            </h2>
+            <p>
+              {isComplete
+                ? 'Sua jornada pelo Festival Gabiroba está registrada aqui. Volte às espécies sempre que quiser rever suas histórias, sabores e cuidados.'
+                : 'Use a coleção de espécies como guia e procure os QR Codes pelo Festival.'}
+            </p>
           </div>
-          <Link className="button button-ghost trail-map-button" to="/especies">Voltar para espécies</Link>
+          <Link className="button button-ghost trail-map-button" to="/especies">
+            {isComplete ? 'Revisitar as espécies' : 'Voltar para espécies'}
+          </Link>
         </section>
 
         {discoveries.length > 0 && (

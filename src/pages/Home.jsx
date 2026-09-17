@@ -26,33 +26,50 @@ export default function Home() {
   const progress = (discoveries.length / species.length) * 100
   const previewSpecies = species.slice(0, 6)
 
+  const handleFestivalClick = () => {
+    document.getElementById('sobre')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <>
-      <section className="hero poster-section" id="inicio">
-        <div className="hero-art" aria-hidden="true">
-          <span className="spark spark-a">✦</span>
-          <span className="spark spark-b">✷</span>
-          <div className="botanical-shape botanical-a" />
-          <div className="botanical-shape botanical-b" />
+      <section className="hero brand-hero" id="inicio">
+        <div className="brand-hero__art" aria-hidden="true">
+          <img src="/festival_gabiroba_site/brand/fauna-flora-hero.png" alt="" />
         </div>
-        <div className="container hero-content hero-sequence">
-          <span className="festival-kicker hero-step hero-step-1">FESTIVAL GABIROBA</span>
-          <h1 className="hero-step hero-step-2">Gastronomia, floresta e os sabores da Mata Atlântica.</h1>
-          <p className="hero-step hero-step-3">
-            Uma experiência para descobrir espécies, ingredientes, histórias e outras formas de se relacionar com a floresta.
-          </p>
-          <div className="hero-actions hero-step hero-step-4">
-            <a className="button button-primary" href="#sobre">Conhecer o Festival</a>
-            <Link className="button button-ghost" to="/especies">Explorar espécies</Link>
+
+        <div className="container brand-hero__grid">
+          <div className="brand-hero__copy">
+            <img
+              className="brand-logo hero-step hero-step-1"
+              src="/festival_gabiroba_site/brand/festival-gabiroba-logo.png"
+              alt="Festival Gabiroba"
+            />
+            <span className="festival-kicker hero-step hero-step-2">SABORES DA MATA ATLÂNTICA</span>
+            <h1 className="hero-step hero-step-2">Gastronomia, floresta e os sabores da Mata Atlântica.</h1>
+            <p className="hero-step hero-step-3">
+              Uma experiência para descobrir espécies, ingredientes, histórias e outras formas de se relacionar com a floresta.
+            </p>
+            <div className="hero-actions hero-step hero-step-4">
+              <Link className="button button-dark hero-primary-button" to="/especies">Explorar espécies</Link>
+              <button className="hero-secondary-link" type="button" onClick={handleFestivalClick}>Conheça o Festival ↓</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="brand-hero__footer">
+          <div className="container brand-hero__footer-inner">
+            <span>GASTRONOMIA</span><span>•</span><span>PATRIMÔNIO</span><span>•</span><span>TERRITÓRIO</span><span>•</span><span>EMPREENDEDORISMO</span>
           </div>
         </div>
       </section>
 
-      <section className="about-strip" id="sobre">
-        <div className="container about-grid" data-reveal>
+      <div className="brand-pattern-divider" aria-hidden="true" />
+
+      <section className="about-strip brand-about" id="sobre">
+        <div className="container about-grid">
           <span className="eyebrow">SOBRE O GABIROBA</span>
           <div>
-            <h2>A Mata Atlântica também se conhece pela mesa.</h2>
+            <h2>A Mata Atlântica também se conecta pela mesa.</h2>
             <p>
               O Gabiroba conecta biodiversidade, gastronomia e conhecimento para aproximar o público de espécies, sabores e histórias que ainda vivem na floresta.
             </p>
@@ -60,7 +77,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="manifesto-section" id="festival">
+      <section className="manifesto-section brand-manifesto" id="festival">
+        <img className="brand-manifesto__art" src="/festival_gabiroba_site/brand/botanical-dots.png" alt="" aria-hidden="true" />
         <div className="container manifesto-grid" data-reveal>
           <span className="eyebrow">POR QUE GABIROBA?</span>
           <div>
@@ -75,8 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-
-      <section className="days-section container">
+      <section className="days-section container brand-experiences">
         <header className="compact-heading" data-reveal>
           <div>
             <span className="eyebrow">O QUE VOCÊ VAI ENCONTRAR</span>
@@ -86,8 +103,9 @@ export default function Home() {
         </header>
 
         <div className="days-grid">
-          {festivalExperiences.map((experience) => (
-            <article className="day-card" key={experience.title} data-reveal>
+          {festivalExperiences.map((experience, index) => (
+            <article className={`day-card brand-day-card brand-day-card--${index + 1}`} key={experience.title} data-reveal>
+              <span className="brand-day-card__number">0{index + 1}</span>
               <div>
                 <span className="day-kicker">{experience.kicker}</span>
                 <h3>{experience.title}</h3>
@@ -98,11 +116,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="trail-feature">
+      <section className="trail-feature brand-trail-feature">
         <div className="container trail-feature__grid" data-reveal>
           <div>
             <span className="eyebrow">DESCUBRA A MATA</span>
-            <h2>20 espécies. 20 histórias.</h2>
+            <h2>20 espécies.<br />20 histórias.</h2>
             <p>
               Encontre as mudas pelo Festival, escaneie os QR Codes e construa sua própria trilha pela Mata Atlântica.
             </p>
@@ -112,7 +130,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="trail-counter-card">
+          <div className="trail-counter-card brand-trail-counter">
             <div className="trail-counter-card__top">
               <span>SUA TRILHA</span>
               <strong>{discoveries.length} / 20</strong>
@@ -123,7 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="species-preview container">
+      <section className="species-preview container brand-species-preview">
         <header className="compact-heading" data-reveal>
           <div>
             <span className="eyebrow">COLEÇÃO DO FESTIVAL</span>
@@ -138,7 +156,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
     </>
   )
 }

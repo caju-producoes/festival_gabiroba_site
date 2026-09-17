@@ -35,6 +35,7 @@ export default function SpeciesPage() {
       <article className="species-page">
         <SpeciesProgress />
         <header className="species-hero poster-section">
+          <img className="species-hero__brand-art" src="/festival_gabiroba_site/brand/botanical-dots.png" alt="" aria-hidden="true" />
           <div className="container species-hero__content" data-reveal>
             <span className="eyebrow">VOCÊ ENCONTROU ✦</span>
             <div className="species-hero__number">{String(item.id).padStart(2, '0')} / 20</div>
@@ -43,7 +44,7 @@ export default function SpeciesPage() {
             <p className="species-intro">{content?.intro}</p>
           </div>
         </header>
-
+        <div className="internal-pattern-rule internal-pattern-rule--species" aria-hidden="true" />
 
         <section className="species-art-panel species-photo-reveal" data-reveal>
           <figure className="species-feature-photo"><img src={item.image} alt={item.imageAlt || item.commonName} /></figure>

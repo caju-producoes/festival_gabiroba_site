@@ -9,7 +9,8 @@ export default function SpeciesIndex() {
 
   return (
     <section className="container page-section species-index-page">
-      <header className="page-heading-compact" data-reveal>
+      <header className="page-heading-compact species-index-heading" data-reveal>
+        <img className="internal-heading-art" src="/festival_gabiroba_site/brand/botanical-dots.png" alt="" aria-hidden="true" />
         <span className="eyebrow">COLEÇÃO DO FESTIVAL</span>
         <div className="page-heading-compact__row">
           <h1>Espécies para descobrir</h1>
@@ -17,6 +18,7 @@ export default function SpeciesIndex() {
         </div>
         <p>Conheça as mudas presentes no Festival e acompanhe as espécies que você já encontrou pelos QR Codes.</p>
       </header>
+      <div className="internal-pattern-rule" aria-hidden="true" />
 
       <div className="trail-summary trail-summary--page" data-reveal>
         <div>
