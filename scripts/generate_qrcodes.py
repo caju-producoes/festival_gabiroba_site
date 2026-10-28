@@ -36,8 +36,10 @@ def main():
 
     base_url = base_url.rstrip('/')
     species = load_species()
-    if len(species) != 20:
-        raise RuntimeError(f'Esperadas 20 espécies, encontradas {len(species)}.')
+    if not species:
+        raise RuntimeError('Nenhuma espécie encontrada.')
+    if len({item['id'] for item in species}) != len(species) or len({item['slug'] for item in species}) != len(species):
+        raise RuntimeError('IDs e slugs das espécies devem ser únicos.')
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     manifest = []

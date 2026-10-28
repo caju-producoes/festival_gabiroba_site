@@ -38,7 +38,7 @@ export default function SpeciesPage() {
           <img className="species-hero__brand-art" src="/festival_gabiroba_site/brand/botanical-dots.png" alt="" aria-hidden="true" />
           <div className="container species-hero__content" data-reveal>
             <span className="eyebrow">VOCÊ ENCONTROU ✦</span>
-            <div className="species-hero__number">{String(item.id).padStart(2, '0')} / 20</div>
+            <div className="species-hero__number">{String(item.id).padStart(2, '0')} / {species.length}</div>
             <h1>{item.commonName}</h1>
             {getDisplayScientificName(item.scientificName) && <p className="scientific-name">{getDisplayScientificName(item.scientificName)}</p>}
             <p className="species-intro">{content?.intro}</p>

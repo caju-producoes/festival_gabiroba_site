@@ -17,7 +17,7 @@ Exemplo para o Cambuci:
 https://caju-producoes.github.io/festival_gabiroba_site/#/especies/cambuci?origem=qrcode
 ```
 
-## Gerar novamente os 20 QR Codes
+## Gerar novamente os 14 QR Codes
 
 ```bash
 python3 scripts/generate_qrcodes.py https://caju-producoes.github.io/festival_gabiroba_site

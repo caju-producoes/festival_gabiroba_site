@@ -1,10 +1,13 @@
 import { useCallback, useEffect, useState } from 'react'
+import { species } from '../data/species'
 
 const STORAGE_KEY = 'gabiroba:discoveries'
+const ACTIVE_SLUGS = new Set(species.map((item) => item.slug))
 
 function readDiscoveries() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY))
+    return Array.isArray(saved) ? [...new Set(saved.filter((slug) => ACTIVE_SLUGS.has(slug)))] : []
   } catch {
     return []
   }
@@ -20,7 +23,7 @@ export function useDiscoveries() {
   const discover = useCallback((slug) => {
     let added = false
     setDiscoveries((current) => {
-      if (current.includes(slug)) return current
+      if (!ACTIVE_SLUGS.has(slug) || current.includes(slug)) return current
       added = true
       return [...current, slug]
     })

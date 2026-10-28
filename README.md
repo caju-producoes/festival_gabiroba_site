@@ -7,7 +7,7 @@ MVP do site do Festival Gabiroba, com identidade visual inspirada no material of
 - Home institucional enxuta
 - Manifesto do Festival
 - Apresentação dos 3 dias: A Mata, A Cozinha e O Encontro
-- Coleção das 20 espécies em `/especies`
+- Coleção das 14 espécies em `/especies`
 - Página individual de espécie em `/especies/:slug`
 - Experiência de QR Code por `?origem=qrcode`
 - Progresso salvo em `localStorage`
@@ -29,7 +29,7 @@ npm run dev
 - `/especies/cambuci`
 - `/especies/cambuci?origem=qrcode`
 
-As 20 espécies possuem conteúdo para o MVP. Observações editoriais de validação permanecem guardadas no código, mas não são exibidas aos visitantes.
+As 14 espécies possuem conteúdo para o MVP. Observações editoriais de validação permanecem guardadas no código, mas não são exibidas aos visitantes.
 
 ## Fotos das especies
 
@@ -44,11 +44,11 @@ Para imagens encontradas na internet, prefira Wikimedia Commons ou acervos insti
 - identificações provisórias permanecem registradas internamente para revisão posterior
 
 ## V6
-- conteúdo completo das 20 espécies
+- conteúdo completo das 14 espécies
 - observações de validação mantidas apenas internamente, sem avisos visíveis no site
 - página individual padronizada para todas as espécies
 
 
 ## QR Codes
 
-Veja `QR_CODES.md` para gerar os 20 códigos apontando para o domínio definitivo do site.
+Veja `QR_CODES.md` para gerar os 22 códigos apontando para o domínio definitivo do site.

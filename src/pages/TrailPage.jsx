@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { species } from '../data/species'
 import { useDiscoveries } from '../hooks/useDiscoveries'
 
-const milestones = [5, 10, 15, 20]
+const milestones = [...[5, 10, 15].filter((value) => value < species.length), species.length]
 
 export default function TrailPage() {
   const { discoveries, reset } = useDiscoveries()
@@ -20,7 +20,7 @@ export default function TrailPage() {
             <h1>{isComplete ? 'Sua trilha está completa.' : 'Sua trilha está ganhando vida.'}</h1>
             <p>
               {isComplete
-                ? 'Você encontrou as 20 espécies do Festival Gabiroba. Agora esta trilha guarda a memória de todos os encontros que fizeram parte da sua jornada.'
+                ? `Você encontrou as ${species.length} espécies do Festival Gabiroba. Agora esta trilha guarda a memória de todos os encontros que fizeram parte da sua jornada.`
                 : 'Cada QR Code encontrado revela uma nova espécie e guarda uma lembrança da sua passagem pelo Festival Gabiroba.'}
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function TrailPage() {
               <span className="eyebrow">PROGRESSO DA TRILHA</span>
               <h2>
                 {isComplete
-                  ? 'Você encontrou todas as 20 espécies. ✦'
+                  ? `Você encontrou todas as ${species.length} espécies. ✦`
                   : discoveries.length === 0
                     ? 'Sua primeira descoberta está esperando por você.'
                     : `${discoveries.length} ${discoveries.length === 1 ? 'história encontrada' : 'histórias encontradas'}.`}
@@ -63,7 +63,7 @@ export default function TrailPage() {
               return (
                 <div className={`trail-milestone ${reached ? 'is-reached' : ''}`} key={value}>
                   <span>{reached ? '✦' : value}</span>
-                  <small>{value === 20 ? 'trilha completa' : `${value} espécies`}</small>
+                  <small>{value === species.length ? 'trilha completa' : `${value} espécies`}</small>
                 </div>
               )
             })}
@@ -84,7 +84,7 @@ export default function TrailPage() {
             </div>
             <p>
               {isComplete
-                ? 'As 20 espécies agora fazem parte da sua coleção. Você pode revisitar cada uma delas e lembrar os encontros da sua passagem pelo Festival.'
+                ? `As ${species.length} espécies agora fazem parte da sua coleção. Você pode revisitar cada uma delas e lembrar os encontros da sua passagem pelo Festival.`
                 : 'As espécies encontradas ganham um selo na sua coleção. Continue procurando as mudas espalhadas pelo Festival.'}
             </p>
           </header>
@@ -134,7 +134,7 @@ export default function TrailPage() {
             <span className="eyebrow">{isComplete ? 'TRILHA COMPLETA' : 'AINDA HÁ MATA PARA DESCOBRIR'}</span>
             <h2>
               {isComplete
-                ? '20 espécies. Uma trilha inteira de encontros.'
+                ? `${species.length} espécies. Uma trilha inteira de encontros.`
                 : `${species.length - discoveries.length} ${species.length - discoveries.length === 1 ? 'espécie ainda espera' : 'espécies ainda esperam'} por você.`}
             </h2>
             <p>

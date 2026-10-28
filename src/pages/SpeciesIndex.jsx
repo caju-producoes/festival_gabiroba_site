@@ -23,7 +23,7 @@ export default function SpeciesIndex() {
       <div className="trail-summary trail-summary--page" data-reveal>
         <div>
           <span className="eyebrow">SUA TRILHA</span>
-          <strong>{discoveries.length} / 20 DESCOBERTAS</strong>
+          <strong>{discoveries.length} / {species.length} DESCOBERTAS</strong>
         </div>
         <div className="progress-track"><span style={{ width: `${progress}%` }} /></div>
       </div>

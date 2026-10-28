@@ -119,7 +119,7 @@ export default function Home() {
         <div className="container trail-feature__grid" data-reveal>
           <div>
             <span className="eyebrow">DESCUBRA A MATA</span>
-            <h2>20 espécies.<br />20 histórias.</h2>
+            <h2>{species.length} espécies.<br />{species.length} histórias.</h2>
             <p>
               Encontre as mudas pelo Festival, escaneie os QR Codes e construa sua própria trilha pela Mata Atlântica.
             </p>
@@ -132,7 +132,7 @@ export default function Home() {
           <div className="trail-counter-card brand-trail-counter">
             <div className="trail-counter-card__top">
               <span>SUA TRILHA</span>
-              <strong>{discoveries.length} / 20</strong>
+              <strong>{discoveries.length} / {species.length}</strong>
             </div>
             <div className="progress-track"><span style={{ width: `${progress}%` }} /></div>
             <p>{discoveries.length === 0 ? 'Sua primeira descoberta começa em uma das mudas do Festival.' : `${discoveries.length} espécie${discoveries.length === 1 ? '' : 's'} descoberta${discoveries.length === 1 ? '' : 's'} até agora.`}</p>
@@ -146,7 +146,7 @@ export default function Home() {
             <span className="eyebrow">COLEÇÃO DO FESTIVAL</span>
             <h2>Algumas espécies para começar.</h2>
           </div>
-          <Link className="text-link" to="/especies">Ver todas as 20 →</Link>
+          <Link className="text-link" to="/especies">Ver todas as {species.length} →</Link>
         </header>
 
         <div className="species-grid species-grid--preview">
