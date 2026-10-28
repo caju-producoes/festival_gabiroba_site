@@ -1,0 +1,516 @@
+{
+  "name": "Fluxo Padrão - checagem de horário",
+  "trigger_type": "conversation_start",
+  "whatsapp_session_id": null,
+  "variables": [
+    {
+      "client_name": "Cliente",
+      "client_number": null,
+      "filas_selecao": null,
+      "atendent_number": null,
+      "lista_enumerada": null,
+      "atendente_number": null,
+      "filas": [
+        [
+          129,
+          "Departamento Pessoal"
+        ],
+        [
+          130,
+          "Fiscal/Contábil"
+        ],
+        [
+          131,
+          "Legalização de Empresas"
+        ],
+        [
+          132,
+          "Financeiro"
+        ],
+        [
+          133,
+          "Certificação Digital"
+        ],
+        [
+          134,
+          "Falar com um atendente"
+        ],
+        [
+          221,
+          "Finalizar o atendimento"
+        ]
+      ],
+      "filas_detalhadas": [
+        {
+          "id": 129,
+          "fila": "Departamento Pessoal",
+          "tags": [
+            "fila_principal"
+          ]
+        },
+        {
+          "id": 130,
+          "fila": "Fiscal/Contábil",
+          "tags": [
+            "fila_principal"
+          ]
+        },
+        {
+          "id": 131,
+          "fila": "Legalização de Empresas",
+          "tags": [
+            "fila_principal"
+          ]
+        },
+        {
+          "id": 132,
+          "fila": "Financeiro",
+          "tags": [
+            "fila_principal"
+          ]
+        },
+        {
+          "id": 133,
+          "fila": "Certificação Digital",
+          "tags": [
+            "fila_principal"
+          ]
+        },
+        {
+          "id": 134,
+          "fila": "Falar com um atendente",
+          "tags": [
+            "fila_principal"
+          ]
+        },
+        {
+          "id": 221,
+          "fila": "Finalizar o atendimento",
+          "tags": [
+            "fila_principal"
+          ]
+        }
+      ],
+      "__conversation_start_inactivity": {
+        "enabled": true,
+        "timeout_enabled": true,
+        "timeout_minutes": 2,
+        "invalid_attempts_enabled": true,
+        "max_invalid_attempts": 1,
+        "team_id": 134,
+        "message": "Irei transferir para a fila"
+      }
+    }
+  ],
+  "start_step_id": 15,
+  "path": [
+    {
+      "step_id": 15,
+      "step_order": 1,
+      "type": "date",
+      "input_type": "date",
+      "title": "Inicial - Checagem de hora",
+      "ui_position": {
+        "x": 316,
+        "y": 344
+      },
+      "input_date": [
+        {
+          "date_id": 1,
+          "interval": [
+            {
+              "end_time": "11:00",
+              "start_time": "07:30",
+              "interval_id": 1
+            },
+            {
+              "end_time": "17:30",
+              "start_time": "13:00",
+              "interval_id": 2
+            }
+          ],
+          "week_day": 1
+        },
+        {
+          "date_id": 2,
+          "interval": [
+            {
+              "end_time": "17:30",
+              "start_time": "13:00",
+              "interval_id": 1
+            },
+            {
+              "end_time": "18:00",
+              "start_time": "07:30",
+              "interval_id": 2
+            }
+          ],
+          "week_day": 2
+        },
+        {
+          "date_id": 3,
+          "interval": [
+            {
+              "end_time": "11:00",
+              "start_time": "07:30",
+              "interval_id": 1
+            },
+            {
+              "end_time": "17:30",
+              "start_time": "13:30",
+              "interval_id": 2
+            }
+          ],
+          "week_day": 3
+        },
+        {
+          "date_id": 4,
+          "interval": [
+            {
+              "end_time": "11:00",
+              "start_time": "07:30",
+              "interval_id": 1
+            },
+            {
+              "end_time": "17:30",
+              "start_time": "13:00",
+              "interval_id": 2
+            }
+          ],
+          "week_day": 4
+        },
+        {
+          "date_id": 5,
+          "interval": [
+            {
+              "end_time": "11:00",
+              "start_time": "07:30",
+              "interval_id": 1
+            },
+            {
+              "end_time": "17:30",
+              "start_time": "13:00",
+              "interval_id": 2
+            }
+          ],
+          "week_day": 5
+        }
+      ],
+      "next_step_ids": [
+        1,
+        14
+      ]
+    },
+    {
+      "step_id": 1,
+      "step_order": 2,
+      "type": "action",
+      "input_type": "code",
+      "title": "Etapa 1",
+      "ui_position": {
+        "x": 40,
+        "y": 40
+      },
+      "input_object": {
+        "language": "python",
+        "action_id": 10,
+        "tag_filter": "fila_principal",
+        "next_step_id": null,
+        "result_variable": "filas_selecao",
+        "action_key": "base.select_queue_by_tag",
+        "action_name": "Selecionar fila por tag (base)"
+      },
+      "next_step_id": 2
+    },
+    {
+      "step_id": 2,
+      "step_order": 3,
+      "type": "action",
+      "input_type": "code",
+      "title": "Etapa 2",
+      "ui_position": {
+        "x": 330,
+        "y": 40
+      },
+      "input_object": {
+        "language": "python",
+        "action_id": 12,
+        "separator": "-",
+        "enum_field": "enum_id",
+        "label_field": "fila",
+        "next_step_id": null,
+        "empty_message": "Nenhum item encontrado.",
+        "input_variable": "filas_selecao",
+        "output_variable": "lista_enumerada",
+        "action_key": "base.enumerate_list_text",
+        "action_name": "Enumerar lista para texto (base)"
+      },
+      "next_step_id": 3
+    },
+    {
+      "step_id": 3,
+      "step_order": 4,
+      "type": "send_message",
+      "input_type": "text",
+      "title": "Etapa 3",
+      "ui_position": {
+        "x": 620,
+        "y": 40
+      },
+      "input_object": {
+        "text": "Seja bem vindo(a) a CRM CONTABILIDADE!\nVocê gostaria de falar com qual setor?\n\n{{lista_enumerada}}"
+      },
+      "next_step_id": 4
+    },
+    {
+      "step_id": 4,
+      "step_order": 5,
+      "type": "receive_message",
+      "input_type": "text",
+      "title": "Etapa 4",
+      "ui_position": {
+        "x": 910,
+        "y": 40
+      },
+      "input_object": {
+        "expected": "[1,2,3,4,5,6,7]",
+        "capture_as": "client_number",
+        "expected_type": "number",
+        "timeout_action": "queue",
+        "timeout_minutes": 3,
+        "max_mismatch_action": "queue",
+        "max_mismatch_attempts": 1,
+        "on_match_next_step_id": null,
+        "on_mismatch_next_step_id": null
+      },
+      "next_step_id": 5
+    },
+    {
+      "step_id": 5,
+      "step_order": 6,
+      "type": "action",
+      "input_type": "code",
+      "title": "Etapa 5",
+      "ui_position": {
+        "x": 1187,
+        "y": 37
+      },
+      "input_object": {
+        "language": "python",
+        "action_id": 1,
+        "next_step_id": null,
+        "team_source_variable": "client_number",
+        "team_name_target_variable": "client_number_fila",
+        "action_key": "base.resolve_queue_name_by_id",
+        "action_name": "Resolver nome da fila por ID (base)"
+      },
+      "next_step_id": 7
+    },
+    {
+      "step_id": 7,
+      "step_order": 7,
+      "type": "condition",
+      "input_type": "condition",
+      "title": "Etapa 7",
+      "ui_position": {
+        "x": 1212,
+        "y": 285
+      },
+      "input_object": {
+        "field": "client_number",
+        "rules": [
+          {
+            "field": "client_number",
+            "operator": "equals",
+            "value": "1",
+            "next_step_id": 13
+          },
+          {
+            "field": "client_number",
+            "operator": "equals",
+            "value": "2",
+            "next_step_id": 13
+          },
+          {
+            "field": "client_number",
+            "operator": "equals",
+            "value": "3",
+            "next_step_id": 13
+          },
+          {
+            "field": "client_number",
+            "operator": "equals",
+            "value": "4",
+            "next_step_id": 13
+          },
+          {
+            "field": "client_number",
+            "operator": "equals",
+            "value": "5",
+            "next_step_id": 13
+          },
+          {
+            "field": "client_number",
+            "operator": "equals",
+            "value": "6",
+            "next_step_id": 13
+          },
+          {
+            "field": "client_number",
+            "operator": "equals",
+            "value": "7",
+            "next_step_id": 9
+          }
+        ],
+        "next_step_id_false": null,
+        "default_next_step_id": null,
+        "on_false_next_step_id": null,
+        "on_mismatch_next_step_id": null
+      },
+      "next_step_ids": [
+        13,
+        9
+      ]
+    },
+    {
+      "step_id": 8,
+      "step_order": 8,
+      "type": "action",
+      "input_type": "code",
+      "title": "Etapa 8",
+      "ui_position": {
+        "x": 1765,
+        "y": 624
+      },
+      "input_object": {
+        "language": "python",
+        "action_id": 3,
+        "next_step_id": null,
+        "action_key": "base.close_conversation",
+        "action_name": "Encerrar conversa (base)"
+      }
+    },
+    {
+      "step_id": 9,
+      "step_order": 9,
+      "type": "send_message",
+      "input_type": "text",
+      "title": "Etapa 9",
+      "ui_position": {
+        "x": 1318,
+        "y": 609
+      },
+      "input_object": {
+        "text": "Seu atendimento foi encerrado"
+      },
+      "next_step_id": 8
+    },
+    {
+      "step_id": 13,
+      "step_order": 10,
+      "type": "action",
+      "input_type": "code",
+      "title": "Filtrar atendentes",
+      "ui_position": {
+        "x": 1904,
+        "y": 359
+      },
+      "input_object": {
+        "language": "python",
+        "action_id": 14,
+        "next_step_id": null,
+        "team_source_variable": "client_number",
+        "action_key": "custom.7078fdc5-529f-49df-93f5-d37920bd5e52",
+        "action_name": "Filtrar atendentes do time (base)"
+      },
+      "next_step_id": 17
+    },
+    {
+      "step_id": 14,
+      "step_order": 11,
+      "type": "send_message",
+      "input_type": "text",
+      "title": "Mensagem fora de horário",
+      "ui_position": {
+        "x": 619,
+        "y": 310
+      },
+      "input_object": {
+        "text": "Olá! No momento estamos fora do nosso horário de expediente (segunda a sexta, das 07:30 às 11:00 e das 13:00 às 17:30). 🕒\n\nMas não se preocupe! Vamos te direcionar para a fila para que nossa equipe possa ver sua mensagem assim que retornarmos. Aguarde um momento! 🤝"
+      }
+    },
+    {
+      "step_id": 17,
+      "step_order": 12,
+      "type": "send_message",
+      "input_type": "text",
+      "title": "Etapa 17",
+      "ui_position": {
+        "x": 1689,
+        "y": 16
+      },
+      "input_object": {
+        "text": "Por favor selecione o atendente que deseja falar\n\n{{numbered(usuarios_online_por_time, nome, \"\\n\", \"%index% - %nome%\")}}"
+      },
+      "next_step_id": 18
+    },
+    {
+      "step_id": 18,
+      "step_order": 13,
+      "type": "receive_message",
+      "input_type": "text",
+      "title": "Etapa 18",
+      "ui_position": {
+        "x": 1979,
+        "y": 16
+      },
+      "input_object": {
+        "expected": "",
+        "capture_as": "atendente_number",
+        "expected_type": "number",
+        "reject_message": "Valor inválido. Tente novamente.",
+        "timeout_action": "queue",
+        "timeout_minutes": 3,
+        "max_mismatch_action": "queue",
+        "max_mismatch_attempts": 1,
+        "on_match_next_step_id": null,
+        "on_mismatch_next_step_id": null
+      },
+      "next_step_id": 20
+    },
+    {
+      "step_id": 19,
+      "step_order": 14,
+      "type": "action",
+      "input_type": "code",
+      "title": "Etapa 19",
+      "ui_position": {
+        "x": 2610,
+        "y": 22
+      },
+      "input_object": {
+        "language": "python",
+        "action_id": 15,
+        "next_step_id": null,
+        "team_source_variable": "atendente_number",
+        "action_key": "custom.302ac2a6-a0c1-48e1-9db6-f8180960ab1d",
+        "action_name": "Resolver escolha e transferir para atendente (base)"
+      }
+    },
+    {
+      "step_id": 20,
+      "step_order": 15,
+      "type": "send_message",
+      "input_type": "text",
+      "title": "Etapa 20",
+      "ui_position": {
+        "x": 2305,
+        "y": 24
+      },
+      "input_object": {
+        "text": "Irei transferir para o atendente selecionado! "
+      },
+      "next_step_id": 19
+    }
+  ]
+}
